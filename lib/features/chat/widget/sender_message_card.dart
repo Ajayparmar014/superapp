@@ -1,6 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
 import 'package:supperapp/common/enum/message_enum.dart';
 import 'package:supperapp/features/chat/widget/display_text_image.dart';
 import 'package:supperapp/widgets/colors/colors.dart';

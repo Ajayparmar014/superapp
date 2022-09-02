@@ -84,23 +84,24 @@ class MobileChatScreen extends ConsumerWidget {
             ),
           ],
         ),
-        body: SizedBox(
-          height: MediaQuery.of(context).size.height - 10,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Expanded(
+        body: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Expanded(
+              child: SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
                 child: ChatList(
                   recieverUserId: uid,
                   isGroupChat: isGroupChat,
                 ),
               ),
-              BottomChatField(
-                recieverUserId: uid,
-                isGroupChat: isGroupChat,
-              ),
-            ],
-          ),
+            ),
+            BottomChatField(
+              recieverUserId: uid,
+              isGroupChat: isGroupChat,
+            ),
+          ],
         ),
       ),
     );

@@ -31,7 +31,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
   bool isShowSendButton = false;
   final TextEditingController _messageController = TextEditingController();
   bool isRecorderInit = false;
-  bool isRocording = false;
+  bool isRecording = false;
   bool isShowEmojiContainer = false;
   FocusNode focusNode = FocusNode();
   FlutterSoundRecorder? _soundRecorder;
@@ -70,7 +70,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
       if (!isRecorderInit) {
         return;
       }
-      if (isRocording) {
+      if (isRecording) {
         await _soundRecorder!.stopRecorder();
         sendFileMessage(File(path), MessageEnum.audio);
       } else {
@@ -79,7 +79,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
         );
       }
       setState(() {
-        isRocording = !isRocording;
+        isRecording = !isRecording;
       });
     }
   }
@@ -264,7 +264,7 @@ class _BottomChatFieldState extends ConsumerState<BottomChatField> {
                   child: Icon(
                     isShowSendButton
                         ? Icons.send
-                        : isRocording
+                        : isRecording
                             ? Icons.close
                             : Icons.mic,
                     color: Colors.white,
